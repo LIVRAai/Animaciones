@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Teleacción · Indicadores Individuales vs Grupales</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Teleacción · Modelo de Gestión</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="stage">
-    <div class="brand">
+  <main class="stage" id="stage">
+
+    <header class="brand">
       <div class="brand-mark">
         <span></span><span></span><span></span>
       </div>
       <div class="brand-name">TELEACCIÓN</div>
-    </div>
+    </header>
 
-    
-    <div class="speed-control">
+    <div class="speed-control ui">
       <label for="speedSelect">VELOCIDAD</label>
-      <select id="speedSelect" aria-label="Velocidad de reproducción">
+      <select id="speedSelect">
         <option value="0.5">0.5×</option>
         <option value="1" selected>1×</option>
         <option value="1.5">1.5×</option>
@@ -27,121 +27,198 @@
       </select>
     </div>
 
-    <div class="progress">
+    <div class="progress ui">
       <div class="progress-bar" id="progressBar"></div>
     </div>
 
-    <!-- ESCENA 1 -->
-    <section class="scene active" data-scene="1">
-      <div class="eyebrow">DIMENSIÓN INDIVIDUAL</div>
-      <h1>Hay indicadores que puedo medir <span>por asesor</span>.</h1>
-
-      <div class="advisor-wrap">
-        <div class="advisor-card hero-advisor">
-          <div class="avatar">
-            <div class="head"></div>
-            <div class="body"></div>
-          </div>
-          <div class="advisor-name">ASESOR</div>
-        </div>
-
-        <div class="metric-cloud">
-          <div class="metric metric-1"><b>TMO</b><small>05:42</small></div>
-          <div class="metric metric-2"><b>CALIDAD</b><small>94%</small></div>
-          <div class="metric metric-3"><b>VENTAS</b><small>18</small></div>
-          <div class="metric metric-4"><b>ADHERENCIA</b><small>97%</small></div>
-        </div>
+    <!-- BLOQUE 1 -->
+    <section class="beat active" data-beat="0">
+      <div class="copy left-copy">
+        <div class="eyebrow">UNA OPERACIÓN SIN MODELO</div>
+        <h1>Tener personas, procesos y KPIs <span>no garantiza una buena gestión.</span></h1>
+        <p>Si cada líder interpreta, prioriza y actúa distinto, la operación pierde consistencia.</p>
       </div>
 
-      <div class="caption">Cada dato tiene una dimensión individual.</div>
+      <div class="chaos-board">
+        <div class="kpi-card k1">
+          <small>NIVEL DE SERVICIO</small><strong>82%</strong>
+        </div>
+        <div class="kpi-card k2">
+          <small>CALIDAD</small><strong>91%</strong>
+        </div>
+        <div class="kpi-card k3">
+          <small>TMO</small><strong>06:24</strong>
+        </div>
+        <div class="kpi-card k4">
+          <small>VENTAS</small><strong>148</strong>
+        </div>
+
+        <div class="leader leader1">
+          <div class="head"></div><div class="body"></div>
+          <span>Supervisor A</span>
+        </div>
+        <div class="leader leader2">
+          <div class="head"></div><div class="body"></div>
+          <span>Supervisor B</span>
+        </div>
+        <div class="leader leader3">
+          <div class="head"></div><div class="body"></div>
+          <span>Supervisor C</span>
+        </div>
+
+        <div class="decision d1">Prioriza TMO</div>
+        <div class="decision d2">Prioriza calidad</div>
+        <div class="decision d3">Prioriza ventas</div>
+
+        <svg class="chaos-lines" viewBox="0 0 760 510" aria-hidden="true">
+          <path d="M190 170 C300 110, 390 220, 560 130"/>
+          <path d="M155 315 C300 220, 435 365, 615 285"/>
+          <path d="M275 410 C370 300, 460 450, 610 390"/>
+        </svg>
+      </div>
     </section>
 
-    <!-- ESCENA 2 -->
-    <section class="scene" data-scene="2">
-      <div class="eyebrow">CONSOLIDACIÓN</div>
-      <h1>Todo indicador individual puede <span>subir al equipo</span>.</h1>
-
-      <div class="team-row" id="teamRow">
-        <div class="advisor-card small"><div class="avatar mini"><div class="head"></div><div class="body"></div></div><small>4:58</small></div>
-        <div class="advisor-card small"><div class="avatar mini"><div class="head"></div><div class="body"></div></div><small>5:13</small></div>
-        <div class="advisor-card small"><div class="avatar mini"><div class="head"></div><div class="body"></div></div><small>5:42</small></div>
-        <div class="advisor-card small"><div class="avatar mini"><div class="head"></div><div class="body"></div></div><small>6:02</small></div>
-        <div class="advisor-card small"><div class="avatar mini"><div class="head"></div><div class="body"></div></div><small>5:55</small></div>
+    <!-- BLOQUE 2 -->
+    <section class="beat" data-beat="1">
+      <div class="copy centered">
+        <div class="eyebrow">MODELO DE GESTIÓN</div>
+        <h1>Es el sistema que define <span>cómo se dirige la operación.</span></h1>
+        <p>Conecta lo que la organización quiere lograr con la forma en que se ejecuta, se mide y se corrige.</p>
       </div>
 
-      <div class="flow-lines">
-        <span></span><span></span><span></span><span></span><span></span>
-      </div>
+      <div class="model-system">
+        <div class="model-core">
+          <small>MODELO DE</small>
+          <strong>GESTIÓN</strong>
+        </div>
 
-      <div class="group-kpi">
-        <div class="group-kpi-label">TMO DEL EQUIPO</div>
-        <div class="group-kpi-value">05:34</div>
-        <div class="group-kpi-note">resultado consolidado</div>
-      </div>
+        <div class="model-node n1">
+          <span class="icon">01</span>
+          <b>OBJETIVOS</b>
+          <small>Qué debemos lograr</small>
+        </div>
 
-      <div class="caption success">INDIVIDUAL <b>→</b> GRUPAL <strong>✓</strong></div>
+        <div class="model-node n2">
+          <span class="icon">02</span>
+          <b>PROCESOS</b>
+          <small>Cómo se ejecuta</small>
+        </div>
+
+        <div class="model-node n3">
+          <span class="icon">03</span>
+          <b>INDICADORES</b>
+          <small>Cómo se mide</small>
+        </div>
+
+        <div class="model-node n4">
+          <span class="icon">04</span>
+          <b>RESPONSABLES</b>
+          <small>Quién debe actuar</small>
+        </div>
+
+        <div class="model-node n5">
+          <span class="icon">05</span>
+          <b>MEJORA</b>
+          <small>Cómo se corrige</small>
+        </div>
+
+        <svg class="system-lines" viewBox="0 0 1000 430" aria-hidden="true">
+          <line x1="500" y1="215" x2="500" y2="64"/>
+          <line x1="500" y1="215" x2="822" y2="118"/>
+          <line x1="500" y1="215" x2="700" y2="363"/>
+          <line x1="500" y1="215" x2="300" y2="363"/>
+          <line x1="500" y1="215" x2="178" y2="118"/>
+        </svg>
+      </div>
     </section>
 
-    <!-- ESCENA 3 -->
-    <section class="scene" data-scene="3">
-      <div class="eyebrow">INDICADOR GRUPAL</div>
-      <h1>Pero no todo indicador grupal puede <span>bajar al individuo</span>.</h1>
-
-      <div class="service-kpi">
-        <div class="service-label">NIVEL DE SERVICIO</div>
-        <div class="service-value">90%</div>
-        <div class="service-sub">resultado del equipo</div>
+    <!-- BLOQUE 3 -->
+    <section class="beat" data-beat="2">
+      <div class="copy left-copy compact">
+        <div class="eyebrow">DE LA ESTRATEGIA A LA EJECUCIÓN</div>
+        <h1>El modelo convierte un objetivo en <span>acciones concretas.</span></h1>
+        <p>Así cada indicador deja de ser un número aislado y se convierte en una señal para decidir.</p>
       </div>
 
-      <div class="split-zone">
-        <div class="split-arrow">↓</div>
-        <div class="fake-split-row">
-          <div class="fake-split"><span>18%?</span><div class="person-dot"></div></div>
-          <div class="fake-split"><span>18%?</span><div class="person-dot"></div></div>
-          <div class="fake-split"><span>18%?</span><div class="person-dot"></div></div>
-          <div class="fake-split"><span>18%?</span><div class="person-dot"></div></div>
-          <div class="fake-split"><span>18%?</span><div class="person-dot"></div></div>
+      <div class="execution-flow">
+        <div class="flow-card">
+          <div class="flow-number">1</div>
+          <div><b>OBJETIVO</b><small>Mejorar la experiencia</small></div>
         </div>
-        <div class="big-x">×</div>
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-card">
+          <div class="flow-number">2</div>
+          <div><b>PROCESO</b><small>Definir cómo atender</small></div>
+        </div>
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-card">
+          <div class="flow-number">3</div>
+          <div><b>INDICADOR</b><small>Medir calidad, NS, FCR…</small></div>
+        </div>
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-card">
+          <div class="flow-number">4</div>
+          <div><b>DECISIÓN</b><small>Detectar desviaciones</small></div>
+        </div>
+        <div class="flow-arrow">→</div>
+
+        <div class="flow-card action">
+          <div class="flow-number">5</div>
+          <div><b>ACCIÓN</b><small>Corregir y mejorar</small></div>
+        </div>
       </div>
 
-      <div class="caption danger">GRUPAL <b>→</b> INDIVIDUAL <strong>NO SIEMPRE</strong></div>
+      <div class="feedback-loop">
+        <div class="loop-line"></div>
+        <span>MEJORA CONTINUA</span>
+        <div class="loop-arrow">↺</div>
+      </div>
     </section>
 
-    <!-- ESCENA 4 -->
-    <section class="scene" data-scene="4">
-      <div class="eyebrow">IDEA CLAVE</div>
-      <h1>La <span>dimensión del indicador</span> importa.</h1>
+    <!-- BLOQUE 4 -->
+    <section class="beat" data-beat="3">
+      <div class="copy centered closing-copy">
+        <div class="eyebrow">¿POR QUÉ ES IMPORTANTE?</div>
+        <h1>Porque permite dejar de gestionar <span>por intuición.</span></h1>
+      </div>
 
-      <div class="logic-card">
-        <div class="logic-row ok">
-          <div class="logic-label">INDIVIDUAL</div>
-          <div class="logic-arrow">→</div>
-          <div class="logic-label">GRUPAL</div>
-          <div class="logic-icon">✓</div>
+      <div class="compare-wrap">
+        <div class="compare-card without">
+          <div class="compare-title">SIN MODELO</div>
+          <div class="compare-row"><span>×</span> Cada líder gestiona diferente</div>
+          <div class="compare-row"><span>×</span> KPIs sin responsables claros</div>
+          <div class="compare-row"><span>×</span> Reacción tardía a desviaciones</div>
+          <div class="compare-row"><span>×</span> Resultados difíciles de sostener</div>
         </div>
-        <div class="logic-divider"></div>
-        <div class="logic-row no">
-          <div class="logic-label">GRUPAL</div>
-          <div class="logic-arrow">→</div>
-          <div class="logic-label">INDIVIDUAL</div>
-          <div class="logic-icon">?</div>
+
+        <div class="vs">VS</div>
+
+        <div class="compare-card with">
+          <div class="compare-title">CON MODELO</div>
+          <div class="compare-row"><span>✓</span> Criterios comunes de gestión</div>
+          <div class="compare-row"><span>✓</span> Responsables y rutinas definidos</div>
+          <div class="compare-row"><span>✓</span> Datos que generan decisiones</div>
+          <div class="compare-row"><span>✓</span> Mejora continua y control</div>
         </div>
       </div>
 
-      <div class="final-message">
-        <p>Todo lo individual puede consolidarse.</p>
-        <p><b>No todo lo grupal puede individualizarse.</b></p>
+      <div class="final-line">
+        <b>Un modelo de gestión no es un tablero de KPIs.</b>
+        <span>Es el sistema que permite dirigir la operación de forma consistente.</span>
       </div>
-
-      <div class="footer-tag">MODELO DE GESTIÓN · TELEACCION</div>
     </section>
 
-    <div class="controls">
-      <button id="prevBtn" aria-label="Escena anterior">‹</button>
+    <div class="controls ui">
+      <button id="prevBtn" aria-label="Anterior">‹</button>
       <button id="playBtn">▶ Reproducir</button>
-      <button id="nextBtn" aria-label="Siguiente escena">›</button>
+      <button id="hideBtn">Ocultar controles</button>
+      <button id="nextBtn" aria-label="Siguiente">›</button>
     </div>
+
+    <button id="showBtn" class="show-btn hidden">Mostrar controles</button>
   </main>
 
   <script src="script.js"></script>

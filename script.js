@@ -1,99 +1,116 @@
-const scenes = [...document.querySelectorAll('.scene')];
+
+const beats = [...document.querySelectorAll('.beat')];
 const progressBar = document.getElementById('progressBar');
 const playBtn = document.getElementById('playBtn');
-const nextBtn = document.getElementById('nextBtn');
 const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+const hideBtn = document.getElementById('hideBtn');
+const showBtn = document.getElementById('showBtn');
 const speedSelect = document.getElementById('speedSelect');
+const stage = document.getElementById('stage');
 
 let current = 0;
-let timer = null;
 let playing = false;
+let timer = null;
 let speed = 1;
 
-// Duración base sugerida por escena.
-// La velocidad seleccionada divide estas duraciones.
-const durations = [3600, 3900, 4300, 4200];
+// Aproximadamente 21 segundos a 1×.
+const durations = [5200, 5200, 5200, 5600];
 
-function applySpeed(){
-  speed = Number(speedSelect.value) || 1;
-  document.documentElement.style.setProperty('--anim-speed', speed);
+function showBeat(index){
+  current = Math.max(0, Math.min(index, beats.length - 1));
 
-  // Si ya está reproduciendo, reinicia el temporizador de la escena
-  // usando la nueva velocidad para que el cambio sea inmediato.
-  if(playing){
-    clearTimeout(timer);
-    scheduleNext();
-  }
-}
-
-function showScene(index){
-  current = (index + scenes.length) % scenes.length;
-
-  scenes.forEach((scene, i) => {
-    scene.classList.toggle('active', i === current);
+  beats.forEach((beat, i) => {
+    beat.classList.toggle('active', i === current);
   });
 
-  progressBar.style.width = `${((current + 1) / scenes.length) * 100}%`;
+  progressBar.style.width = `${((current + 1) / beats.length) * 100}%`;
 }
 
-function stopPlayback(){
+function stop(){
+  playing = false;
   clearTimeout(timer);
   timer = null;
-  playing = false;
   playBtn.textContent = '▶ Reproducir';
 }
 
-function scheduleNext(){
+function schedule(){
   clearTimeout(timer);
-  const sceneDuration = durations[current] / speed;
-
   timer = setTimeout(() => {
-    if(current < scenes.length - 1){
-      showScene(current + 1);
-      scheduleNext();
-    } else {
-      stopPlayback();
+    if(current < beats.length - 1){
+      showBeat(current + 1);
+      schedule();
+    }else{
+      stop();
     }
-  }, sceneDuration);
+  }, durations[current] / speed);
 }
 
-function playFromCurrent(){
+function play(){
   playing = true;
   playBtn.textContent = '❚❚ Pausar';
-  scheduleNext();
+  schedule();
+}
+
+function updateSpeed(){
+  speed = Number(speedSelect.value) || 1;
+  document.documentElement.style.setProperty('--speed', speed);
+
+  if(playing){
+    clearTimeout(timer);
+    schedule();
+  }
 }
 
 playBtn.addEventListener('click', () => {
   if(playing){
-    stopPlayback();
-  } else {
-    if(current === scenes.length - 1){
-      showScene(0);
-    }
-    playFromCurrent();
+    stop();
+    return;
   }
-});
 
-nextBtn.addEventListener('click', () => {
-  stopPlayback();
-  showScene(current + 1);
+  if(current === beats.length - 1){
+    showBeat(0);
+  }
+  play();
 });
 
 prevBtn.addEventListener('click', () => {
-  stopPlayback();
-  showScene(current - 1);
+  stop();
+  showBeat(current - 1);
 });
 
-speedSelect.addEventListener('change', applySpeed);
+nextBtn.addEventListener('click', () => {
+  stop();
+  showBeat(current + 1);
+});
+
+speedSelect.addEventListener('change', updateSpeed);
+
+hideBtn.addEventListener('click', () => {
+  stage.classList.add('clean');
+  showBtn.classList.remove('hidden');
+});
+
+showBtn.addEventListener('click', () => {
+  stage.classList.remove('clean');
+  showBtn.classList.add('hidden');
+});
 
 document.addEventListener('keydown', (e) => {
   if(e.key === 'ArrowRight') nextBtn.click();
   if(e.key === 'ArrowLeft') prevBtn.click();
-  if(e.key === ' ') {
+  if(e.key === ' '){
     e.preventDefault();
     playBtn.click();
   }
+  if(e.key.toLowerCase() === 'h'){
+    if(stage.classList.contains('clean')){
+      showBtn.click();
+    }else{
+      hideBtn.click();
+    }
+  }
 });
 
-applySpeed();
-showScene(0);
+updateSpeed();
+showBeat(0);
