@@ -1,22 +1,30 @@
 TELEACCIÓN · SHORT ANIMADO
 
+Versión actualizada:
+- Paleta Teleacción basada en la referencia visual suministrada:
+  naranja #F38C2E
+  negro #1B1B1B
+  gris oscuro #303030
+  grises neutros
+  blanco
+- Selector de velocidad: 0.5×, 1×, 1.5×, 2× y 3×.
+- El selector cambia tanto la duración entre escenas como la velocidad
+  de las animaciones internas.
+
 Archivos:
 - index.html
 - styles.css
 - script.js
 
 Uso:
-1. Abre index.html en Chrome/Edge/Safari.
-2. Pulsa "Reproducir".
-3. Graba la ventana en formato vertical o úsala como referencia para edición.
-4. Las flechas cambian de escena manualmente.
+1. Abre index.html.
+2. Selecciona la velocidad en la esquina superior derecha.
+3. Pulsa “Reproducir”.
+4. Puedes avanzar o retroceder manualmente con las flechas.
 
 Formato:
-- Diseño vertical 9:16.
+- Vertical 9:16.
 - 4 escenas.
-- Duración total aproximada: 16 segundos.
-- Paleta basada en azul marino, azul, gris, blanco y naranja de acento.
-
-Nota:
-La paleta es una aproximación coherente con las piezas visuales recientes de Teleacción.
-Si tienes los HEX oficiales, cambia las variables al inicio de styles.css.
+- Duración aproximada a 1×: 16 segundos.
+- A 2×: aproximadamente 8 segundos.
+- A 3×: aproximadamente 5.5 segundos.
