@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teleacción · Indicadores Individuales vs Grupales</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="stage">
+    <div class="brand">
+      <div class="brand-mark">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="brand-name">TELEACCIÓN</div>
+    </div>
+
+    <div class="progress">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+
+    <!-- ESCENA 1 -->
+    <section class="scene active" data-scene="1">
+      <div class="eyebrow">ESCENA 1 · DIMENSIÓN INDIVIDUAL</div>
+      <h1>Hay indicadores que puedo medir <span>por asesor</span>.</h1>
+
+      <div class="advisor-wrap">
+        <div class="advisor-card hero-advisor">
+          <div class="avatar">
+            <div class="head"></div>
+            <div class="body"></div>
+          </div>
+          <div class="advisor-name">ASESOR</div>
+        </div>
+
+        <div class="metric-cloud">
+          <div class="metric metric-1"><b>TMO</b><small>05:42</small></div>
+          <div class="metric metric-2"><b>CALIDAD</b><small>94%</small></div>
+          <div class="metric metric-3"><b>VENTAS</b><small>18</small></div>
+          <div class="metric metric-4"><b>ADHERENCIA</b><small>97%</small></div>
+        </div>
+      </div>
+
+      <div class="caption">Cada dato tiene una dimensión individual.</div>
+    </section>
+
+    <!-- ESCENA 2 -->
+    <section class="scene" data-scene="2">
+      <div class="eyebrow">ESCENA 2 · CONSOLIDACIÓN</div>
+      <h1>Todo indicador individual puede <span>subir al equipo</span>.</h1>
+
+      <div class="team-row" id="teamRow">
+        <div class="advisor-card small"><div class="avatar mini"><div class="head"></div><div class="body"></div></div><small>4:58</small></div>
+        <div class="advisor-card small"><div class="avatar mini"><div class="head"></div><div class="body"></div></div><small>5:13</small></div>
+        <div class="advisor-card small"><div class="avatar mini"><div class="head"></div><div class="body"></div></div><small>5:42</small></div>
+        <div class="advisor-card small"><div class="avatar mini"><div class="head"></div><div class="body"></div></div><small>6:02</small></div>
+        <div class="advisor-card small"><div class="avatar mini"><div class="head"></div><div class="body"></div></div><small>5:55</small></div>
+      </div>
+
+      <div class="flow-lines">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+
+      <div class="group-kpi">
+        <div class="group-kpi-label">TMO DEL EQUIPO</div>
+        <div class="group-kpi-value">05:34</div>
+        <div class="group-kpi-note">resultado consolidado</div>
+      </div>
+
+      <div class="caption success">INDIVIDUAL <b>→</b> GRUPAL <strong>✓</strong></div>
+    </section>
+
+    <!-- ESCENA 3 -->
+    <section class="scene" data-scene="3">
+      <div class="eyebrow">ESCENA 3 · EL ERROR</div>
+      <h1>Pero no todo indicador grupal puede <span>bajar al individuo</span>.</h1>
+
+      <div class="service-kpi">
+        <div class="service-label">NIVEL DE SERVICIO</div>
+        <div class="service-value">90%</div>
+        <div class="service-sub">resultado del equipo</div>
+      </div>
+
+      <div class="split-zone">
+        <div class="split-arrow">↓</div>
+        <div class="fake-split-row">
+          <div class="fake-split"><span>18%?</span><div class="person-dot"></div></div>
+          <div class="fake-split"><span>18%?</span><div class="person-dot"></div></div>
+          <div class="fake-split"><span>18%?</span><div class="person-dot"></div></div>
+          <div class="fake-split"><span>18%?</span><div class="person-dot"></div></div>
+          <div class="fake-split"><span>18%?</span><div class="person-dot"></div></div>
+        </div>
+        <div class="big-x">×</div>
+      </div>
+
+      <div class="caption danger">GRUPAL <b>→</b> INDIVIDUAL <strong>NO SIEMPRE</strong></div>
+    </section>
+
+    <!-- ESCENA 4 -->
+    <section class="scene" data-scene="4">
+      <div class="eyebrow">ESCENA 4 · IDEA CLAVE</div>
+      <h1>La <span>dimensión del indicador</span> importa.</h1>
+
+      <div class="logic-card">
+        <div class="logic-row ok">
+          <div class="logic-label">INDIVIDUAL</div>
+          <div class="logic-arrow">→</div>
+          <div class="logic-label">GRUPAL</div>
+          <div class="logic-icon">✓</div>
+        </div>
+        <div class="logic-divider"></div>
+        <div class="logic-row no">
+          <div class="logic-label">GRUPAL</div>
+          <div class="logic-arrow">→</div>
+          <div class="logic-label">INDIVIDUAL</div>
+          <div class="logic-icon">?</div>
+        </div>
+      </div>
+
+      <div class="final-message">
+        <p>Todo lo individual puede consolidarse.</p>
+        <p><b>No todo lo grupal puede individualizarse.</b></p>
+      </div>
+
+      <div class="footer-tag">GESTIÓN DE CONTACT CENTER · TELEACCIÓN</div>
+    </section>
+
+    <div class="controls">
+      <button id="prevBtn" aria-label="Escena anterior">‹</button>
+      <button id="playBtn">▶ Reproducir</button>
+      <button id="nextBtn" aria-label="Siguiente escena">›</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
