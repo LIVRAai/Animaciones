@@ -28,3 +28,7 @@ Formato:
 - Duración aproximada a 1×: 16 segundos.
 - A 2×: aproximadamente 8 segundos.
 - A 3×: aproximadamente 5.5 segundos.
+
+
+Ajuste V3:
+- Se eliminó la palabra “ESCENA” y su numeración de todos los textos visibles.
